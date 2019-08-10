@@ -7,7 +7,7 @@ import styles from './project-preview-grid.module.css'
 function ProjectPreviewGrid (props) {
   return (
     <div className={styles.root}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
+      <h1>{props.title}</h1>
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map(node => (

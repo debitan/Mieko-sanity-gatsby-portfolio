@@ -15,6 +15,20 @@ export default {
       title: 'Title'
     },
     {
+      name: 'hero',
+      type: 'array',
+      of: [{type: 'block'}],
+      title: 'Hero',
+      description: 'This content will appear on the hero on the index page'
+    },
+    {
+      name: 'about',
+      type: 'array',
+      of: [{type: 'block'}],
+      title: 'About',
+      description: 'This content will appear on the about page'
+    },
+    {
       name: 'description',
       type: 'text',
       title: 'Description',

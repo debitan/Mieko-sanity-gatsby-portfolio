@@ -1,7 +1,13 @@
 .root {
-  display: block;
+  display: grid;
   color: inherit;
   text-decoration: none;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1.5em;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .title {
@@ -12,6 +18,9 @@
   position: relative;
   padding-bottom: 66.666%;
   background: #eee;
+  grid-column: 1;
+
+
 
   @nest & img {
     position: absolute;
@@ -24,6 +33,8 @@
 }
 
 .title {
+  grid-column: 2;
+
   @media (hover: hover) {
     @nest .root:hover & {
       text-decoration: underline;
@@ -32,6 +43,8 @@
 }
 
 .excerpt {
+  grid-column: 2;
+
   @nest & p {
     margin: 0.5em 0;
   }

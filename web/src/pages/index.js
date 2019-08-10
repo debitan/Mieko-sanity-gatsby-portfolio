@@ -10,6 +10,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import BlockText from '../components/block-text'
+import styled from 'styled-components'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -17,6 +19,7 @@ export const query = graphql`
       title
       description
       keywords
+      _rawHero
     }
     projects: allSanityProject(
       limit: 6
@@ -83,11 +86,29 @@ const IndexPage = props => {
     )
   }
 
+  const Hero = styled.div`
+    display: flex;
+    height: 100vh;
+    grid-gap: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    background-color: #D9FFFF;
+    font-size: 3.5vh;
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width: 600px) {
+      font-size: 4vh;
+    }
+  `
+
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
+      <Hero>
+        <BlockText blocks={site._rawHero} />
+      </Hero>
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
             title='Latest projects'
