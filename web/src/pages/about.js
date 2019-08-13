@@ -46,6 +46,7 @@ const AboutPage = props => {
     font-size: 3.5vh;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     @media(min-width: 600px) {
       font-size: 4vh;
