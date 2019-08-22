@@ -23,8 +23,7 @@ export default {
     },
     {
       name: 'about',
-      type: 'array',
-      of: [{type: 'block'}],
+      type: 'projectPortableText',
       title: 'About',
       description: 'This content will appear on the about page'
     },
